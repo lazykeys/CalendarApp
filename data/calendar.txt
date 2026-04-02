@@ -1,0 +1,1525 @@
+{
+  "year": 2026,
+  "months": [
+    {
+      "name": "January",
+      "days": [
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "February",
+      "days": [
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "March",
+      "days": [
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "April",
+      "days": [
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "May",
+      "days": [
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "June",
+      "days": [
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "July",
+      "days": [
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "August",
+      "days": [
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "September",
+      "days": [
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "October",
+      "days": [
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "November",
+      "days": [
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        }
+      ]
+    },
+    {
+      "name": "December",
+      "days": [
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        },
+        {
+          "weekday": "Fri",
+          "events": null
+        },
+        {
+          "weekday": "Sat",
+          "events": null
+        },
+        {
+          "weekday": "Sun",
+          "events": null
+        },
+        {
+          "weekday": "Mon",
+          "events": null
+        },
+        {
+          "weekday": "Tue",
+          "events": null
+        },
+        {
+          "weekday": "Wed",
+          "events": null
+        },
+        {
+          "weekday": "Thu",
+          "events": null
+        }
+      ]
+    }
+  ]
+}

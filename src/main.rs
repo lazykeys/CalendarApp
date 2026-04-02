@@ -1,7 +1,5 @@
 use chrono::prelude::*;
-use std::collections::HashMap;
 use serde::{Serialize, Deserialize};
-use serde_json::Result;
 mod calendar_data;
 
 fn main () {
@@ -21,13 +19,13 @@ fn main () {
 #[derive(Default, Serialize, Deserialize)]
 struct Calendar {
     year: i32,
-    months: HashMap<u8, CalendarMonth>
+    months: Vec<CalendarMonth>
 }
 
 #[derive(Default, Serialize, Deserialize)]
 struct CalendarMonth {
     name: String,
-    days: HashMap<u8, CalendarDay>
+    days: Vec<CalendarDay>
 }
 
 #[derive(Default, Serialize, Deserialize)]
@@ -47,13 +45,23 @@ impl Calendar {
     fn new(_cc: &eframe::CreationContext<'_>) -> Self {
         //can customize egui using cc.egui_ctx.set_fonts and cc.egui_ctx.set_global_style
 
+        let existing_calendar_data = calendar_data::file_io::read_calendar_from_file();
+
+        //return the read data if it exists
+        match existing_calendar_data {
+            Some(_) => return existing_calendar_data.unwrap(),
+            None => {}
+        }
+
+        println!("No calendar data found, creating new data!");
+
         //get the current year
         let current_year = Local::now().year();
 
         //create a new empty calendar based on this year
         let mut calendar = Calendar {
             year: current_year,
-            months : HashMap::new()
+            months : Vec::new()
         };
 
         let mut current_month_in_process = Month::January;
@@ -70,22 +78,21 @@ impl Calendar {
             //map each number day to a tuple of the number day and a CalendarDay struct
             .map(|d|
             
-                (d, 
                 CalendarDay {
                     weekday: NaiveDate::from_ymd_opt(
                         current_year, 
                         current_month_in_process.number_from_month(),
-                        d.into())
-                        .unwrap()
-                        .weekday()
-                        .to_string(),
+                        d.into()
+                    )
+                    .unwrap()
+                    .weekday()
+                    .to_string(),
                     events: None
-                })
-
+                }
             )
 
             //convert this mapping into a HashMap for the CalendarMonth struct
-            .collect::<HashMap<u8, CalendarDay>>();
+            .collect();
 
             //create a new CalendarMonth for the current month and populate it with the above data
             let calendar_month = CalendarMonth {
@@ -94,10 +101,7 @@ impl Calendar {
             };
 
             //add the new CalendarMonth to the Calendar struct
-            calendar.months.insert(
-                current_month_in_process.number_from_month().try_into().unwrap(),
-                calendar_month
-            );
+            calendar.months.push(calendar_month);
 
             //the loop ends after December has been processed
             if current_month_in_process == Month::December {
@@ -109,6 +113,8 @@ impl Calendar {
             }
         }
 
+        calendar_data::file_io::write_calendar_to_file(&calendar);
+
         calendar
         //TODO: read year from saved file, if it is different than saved data year, create new data
     }
@@ -117,7 +123,7 @@ impl Calendar {
 impl eframe::App for Calendar {
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         egui::CentralPanel::default().show_inside(ui, |ui| {
-            ui.heading(self.months.len().to_string());
+            ui.heading(self.months[0].name.to_string());
         });
     }
 }
