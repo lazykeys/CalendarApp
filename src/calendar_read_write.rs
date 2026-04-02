@@ -1,6 +1,7 @@
 pub mod file_io {
-    use crate::Calendar;
-    use std::io::prelude::*;
+
+    use crate::calendar::data::Calendar;
+    use std::io::{Read, Write};
     use std::path::Path;
     use std::fs::File;
 
