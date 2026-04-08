@@ -11,20 +11,21 @@ pub mod data{
         pub months: Vec<CalendarMonth>
     }
 
-    #[derive(Default, Serialize, Deserialize)]
+    #[derive(Default, Clone, Serialize, Deserialize)]
     pub struct CalendarMonth {
         pub name: String,
         pub days: Vec<CalendarDay>
     }
 
-    #[derive(Default, Serialize, Deserialize)]
+    #[derive(Default, Clone, Serialize, Deserialize)]
     pub struct CalendarDay {
         pub number: u8,
         pub day_of_the_week: String,
+        pub days_from_sunday: u32,
         pub events: Option<Vec<CalendarEvent>>
     }
 
-    #[derive(Default, Serialize, Deserialize)]
+    #[derive(Default, Clone, Serialize, Deserialize)]
     pub struct CalendarEvent {
         pub name: String,
         pub time: String,
@@ -52,6 +53,7 @@ pub mod data{
             months : Vec::new()
         };
 
+        //begin with January
         let mut current_month_in_process = Month::January;
 
         //iterate through all months in this year and create new structs for each
@@ -76,6 +78,14 @@ pub mod data{
                     .unwrap()
                     .weekday()
                     .to_string(),
+                    days_from_sunday: NaiveDate::from_ymd_opt(
+                        current_year, 
+                        current_month_in_process.number_from_month(),
+                        day.into(),
+                    )
+                    .unwrap()
+                    .weekday()
+                    .num_days_from_sunday(),
                     events: None
                 }
             )
@@ -102,6 +112,7 @@ pub mod data{
             }
         }
 
+        //write the new calendar to a JSON file
         calendar_read_write::file_io::write_calendar_to_file(&calendar);
 
         calendar

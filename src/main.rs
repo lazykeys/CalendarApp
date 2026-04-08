@@ -1,6 +1,6 @@
 use egui::*;
 
-use crate::calendar::data::Calendar;
+use crate::calendar::data::{Calendar, CalendarMonth};
 mod calendar;
 mod calendar_read_write;
 
@@ -13,7 +13,10 @@ fn main () {
         .with_resizable(true)
 
         //sets the size of the window
-        .with_inner_size([1920.0, 1080.0]),
+        .with_inner_size([
+            960.0, //height 
+            540.0  //width
+        ]),
 
         ..Default::default()
     };
@@ -31,13 +34,51 @@ struct CalendarApp
     data: Calendar
 }
 
-
 impl CalendarApp{
     fn new(cc: &eframe::CreationContext<'_>) -> Self {
-        //can customize egui using cc.egui_ctx.set_fonts and cc.egui_ctx.set_global_style
         set_styles(&cc.egui_ctx);
+
         //initialize app with calendar data
         Self { data: calendar::data::create_calendar() }
+    }
+
+    //displays the given CalendarMonth and its related data in the central panel
+    fn show_month(&mut self, ui: &mut egui::Ui, month: &CalendarMonth) {
+
+        //creates a grid for all of the days in the given CalendarMonth
+        egui::Grid::new("month_grid")
+
+        //controls sizing of columns and rows
+        .min_col_width(100.0)
+        .max_col_width(100.0)
+        .min_row_height(100.0)
+
+        //controls spacing between columns and rows
+        .spacing(Vec2::new(0.0, 0.0))
+
+        //displays the grid and its contents
+        .show(ui, |ui| {
+
+            //find the amount of "dummy days", being the empty calendar day cells before real days start
+            let mut dummy_count = 0;
+            for dummy_days in 0..month.days[0].days_from_sunday {
+                dummy_count += 1;
+                ui.label("");
+            }
+
+            //add a new day cell to the calendar
+            for day in &month.days {
+                ui.group(|ui| {
+                    ui.label(format!("{}, {}", day.day_of_the_week.to_string(), day.number.to_string()));
+                });
+
+                //ends the row after every 7 cells, including dummies, are added
+                let day_grid_cell_number = day.number + dummy_count;
+                if day_grid_cell_number > 0 && day_grid_cell_number % 7 == 0 {
+                    ui.end_row();
+                }
+            }
+        });
     }
 }
 
@@ -52,17 +93,19 @@ impl eframe::App for CalendarApp {
         let main_frame = egui::containers::Frame {
 
             //the background color of the window
-            fill: Color32::LIGHT_BLUE,
+            fill: Color32::from_rgb(
+                84,  //red 
+                168, //green
+                144  //blue
+            ),
             ..Default::default()
         };
 
         //the main window
         CentralPanel::default().frame(main_frame).show_inside(ui, |ui| {
 
-            let calendar_data = &self.data;
-
-            //the name of the month
-            ui.heading(calendar_data.months[0].name.to_string());
+            let current_month = self.data.months[0].clone();
+            self.show_month(ui, &current_month);
         });
     }
 }
