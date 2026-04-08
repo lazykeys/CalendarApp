@@ -33,9 +33,9 @@ struct CalendarApp
 
 
 impl CalendarApp{
-    fn new(_cc: &eframe::CreationContext<'_>) -> Self {
+    fn new(cc: &eframe::CreationContext<'_>) -> Self {
         //can customize egui using cc.egui_ctx.set_fonts and cc.egui_ctx.set_global_style
-        
+        set_styles(&cc.egui_ctx);
         //initialize app with calendar data
         Self { data: calendar::data::create_calendar() }
     }
@@ -47,15 +47,45 @@ impl eframe::App for CalendarApp {
         ui: &mut Ui, 
         _frame: &mut eframe::Frame
     ) {
-        CentralPanel::default().show_inside(ui, |ui| {
-            
-            // ui.heading(&self.data.months[0].name.to_string());
 
-            // for day in &self.months[0].days {
-            //     ui.label(day.weekday.to_string());
-            // }
+        //the frame of the main window that shows up when the app is run
+        let main_frame = egui::containers::Frame {
 
-            todo!();
+            //the background color of the window
+            fill: Color32::LIGHT_BLUE,
+            ..Default::default()
+        };
+
+        //the main window
+        CentralPanel::default().frame(main_frame).show_inside(ui, |ui| {
+
+            let calendar_data = &self.data;
+
+            //the name of the month
+            ui.heading(calendar_data.months[0].name.to_string());
         });
     }
+}
+
+//sets the global styles of the app
+fn set_styles(ctx: &Context) {
+    let mut global_style = (*ctx.global_style()).clone();
+
+    //sets custom styles for text elements
+    global_style.text_styles = [
+
+        //header elements
+        (TextStyle::Heading, FontId::new(30.0, FontFamily::Monospace)),
+
+        //body text elements
+        (TextStyle::Body, FontId::new(18.0, FontFamily::Monospace)),
+
+        //button elements
+        (TextStyle::Button, FontId::new(22.0, FontFamily::Monospace)),
+
+        //small text elements
+        (TextStyle::Small, FontId::new(14.0, FontFamily::Monospace))
+    ].into();
+
+    ctx.set_global_style(global_style);
 }

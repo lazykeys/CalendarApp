@@ -7,27 +7,28 @@ pub mod data{
     
     #[derive(Default, Serialize, Deserialize)]
     pub struct Calendar {
-        year: i32,
-        months: Vec<CalendarMonth>
+        pub year: i32,
+        pub months: Vec<CalendarMonth>
     }
 
     #[derive(Default, Serialize, Deserialize)]
-    struct CalendarMonth {
-        name: String,
-        days: Vec<CalendarDay>
+    pub struct CalendarMonth {
+        pub name: String,
+        pub days: Vec<CalendarDay>
     }
 
     #[derive(Default, Serialize, Deserialize)]
-    struct CalendarDay {
-        weekday: String,
-        events: Option<Vec<CalendarEvent>>
+    pub struct CalendarDay {
+        pub number: u8,
+        pub day_of_the_week: String,
+        pub events: Option<Vec<CalendarEvent>>
     }
 
     #[derive(Default, Serialize, Deserialize)]
-    struct CalendarEvent {
-        name: String,
-        time: String,
-        location: String
+    pub struct CalendarEvent {
+        pub name: String,
+        pub time: String,
+        pub location: String
     }
 
     pub fn create_calendar() -> Calendar {
@@ -66,10 +67,11 @@ pub mod data{
             .map(|day|
             
                 CalendarDay {
-                    weekday: NaiveDate::from_ymd_opt(
+                    number: day,
+                    day_of_the_week: NaiveDate::from_ymd_opt(
                         current_year, 
                         current_month_in_process.number_from_month(),
-                        day.into()
+                        day.into(),
                     )
                     .unwrap()
                     .weekday()
