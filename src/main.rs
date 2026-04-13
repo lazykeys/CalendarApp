@@ -1,4 +1,5 @@
 use egui::*;
+use eframe::*;
 
 use crate::calendar::data::{Calendar, CalendarMonth};
 mod calendar;
@@ -6,8 +7,8 @@ mod calendar_read_write;
 
 fn main () {
     //settings for the window
-    let native_options = eframe::NativeOptions{
-        viewport: eframe::egui::ViewportBuilder::default()
+    let native_options = NativeOptions{
+        viewport: ViewportBuilder::default()
 
         //makes window resizable
         .with_resizable(true)
@@ -16,12 +17,18 @@ fn main () {
         .with_inner_size([
             960.0, //height 
             540.0  //width
+        ])
+
+        //sets the minimum size of the window
+        .with_min_inner_size([
+            480.0, 
+            270.0
         ]),
 
         ..Default::default()
     };
 
-    eframe::run_native(
+    run_native(
         "My Test App",
         native_options,
         Box::new(|cc| Ok(Box::new(CalendarApp::new(cc))))
@@ -31,22 +38,23 @@ fn main () {
 
 struct CalendarApp
 {
-    data: Calendar
+    data: Calendar,
+    current_month_num: usize
 }
 
 impl CalendarApp{
-    fn new(cc: &eframe::CreationContext<'_>) -> Self {
+    fn new(cc: &CreationContext<'_>) -> Self {
         set_styles(&cc.egui_ctx);
+        set_visuals(&cc.egui_ctx);
 
         //initialize app with calendar data
-        Self { data: calendar::data::create_calendar() }
+        Self { data: calendar::data::create_calendar(), current_month_num: 0 }
     }
 
     //displays the given CalendarMonth and its related data in the central panel
-    fn show_month(&mut self, ui: &mut egui::Ui, month: &CalendarMonth) {
-
+    fn show_month_grid(&mut self, ui: &mut Ui, month: &CalendarMonth) {        
         //creates a grid for all of the days in the given CalendarMonth
-        egui::Grid::new("month_grid")
+        Grid::new("month_grid")
 
         //controls sizing of columns and rows
         .min_col_width(100.0)
@@ -61,14 +69,18 @@ impl CalendarApp{
 
             //find the amount of "dummy days", being the empty calendar day cells before real days start
             let mut dummy_count = 0;
-            for dummy_days in 0..month.days[0].days_from_sunday {
+            for _dummy_days in 0..month.days[0].days_from_sunday {
                 dummy_count += 1;
-                ui.label("");
+
+                get_day_frame(10).show(ui, |ui| {
+                    ui.label("");
+                });
             }
 
             //add a new day cell to the calendar
             for day in &month.days {
-                ui.group(|ui| {
+
+                get_day_frame(10).show(ui, |ui| {
                     ui.label(format!("{}, {}", day.day_of_the_week.to_string(), day.number.to_string()));
                 });
 
@@ -104,8 +116,38 @@ impl eframe::App for CalendarApp {
         //the main window
         CentralPanel::default().frame(main_frame).show_inside(ui, |ui| {
 
-            let current_month = self.data.months[0].clone();
-            self.show_month(ui, &current_month);
+            let current_month = self.data.months[self.current_month_num].clone();
+
+            ui.with_layout(Layout::top_down(Align::Center), |ui| {
+                
+                egui::Frame::default().inner_margin(50).show(ui, |ui| {
+                    ui.heading(&current_month.name);
+                });
+
+                egui::Frame::default().show(ui, |ui| {
+                    self.show_month_grid(ui, &current_month);
+                });
+            });
+
+            if ui.button("Next").clicked() {
+
+                if self.current_month_num == self.data.months.len() - 1 {
+                    self.current_month_num = 0;
+                }
+                else {
+                    self.current_month_num += 1;
+                }
+            }
+
+            if ui.button("Previous").clicked() {
+                
+                if self.current_month_num == 0 {
+                    self.current_month_num = self.data.months.len() - 1;
+                }
+                else {
+                    self.current_month_num -= 1;
+                }
+            }
         });
     }
 }
@@ -131,4 +173,42 @@ fn set_styles(ctx: &Context) {
     ].into();
 
     ctx.set_global_style(global_style);
+}
+
+fn set_visuals(ctx: &Context) {
+    let mut global_style = (*ctx.global_style()).clone();
+
+    global_style.visuals = Visuals {
+        override_text_color: Some(Color32::from_rgb(
+            5,
+            5,
+            5
+        )),
+        ..Default::default()
+    };
+
+    ctx.set_global_style(global_style);
+}
+
+fn get_day_frame(size: i8) -> egui::Frame {
+    egui::Frame{
+
+        //size of the frame
+        inner_margin: Margin{
+            left: size,
+            right: size,
+            top: size,
+            bottom: size,
+        },
+
+        outer_margin: Margin { left: 0, right: 0, top: 0, bottom: 0 },
+
+        //outline of the frame
+        stroke: Stroke{
+            width: 1.0, 
+            color: Color32::BLACK
+        },
+
+        ..Default::default()
+    }
 }
