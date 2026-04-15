@@ -16,13 +16,13 @@ fn main () {
         //sets the size of the window
         .with_inner_size([
             960.0, //height 
-            540.0  //width
+            720.0  //width
         ])
 
         //sets the minimum size of the window
         .with_min_inner_size([
-            480.0, 
-            270.0
+            960.0, //height 
+            720.0  //width
         ]),
 
         ..Default::default()
@@ -48,11 +48,15 @@ impl CalendarApp{
         set_visuals(&cc.egui_ctx);
 
         //initialize app with calendar data
-        Self { data: calendar::data::create_calendar(), current_month_num: 0 }
+        Self { 
+            data: calendar::data::create_calendar(),
+            current_month_num: 0,
+        }
     }
 
     //displays the given CalendarMonth and its related data in the central panel
-    fn show_month_grid(&mut self, ui: &mut Ui, month: &CalendarMonth) {        
+    fn show_month_grid(&mut self, ui: &mut Ui, month: &CalendarMonth) {
+          
         //creates a grid for all of the days in the given CalendarMonth
         Grid::new("month_grid")
 
@@ -68,24 +72,37 @@ impl CalendarApp{
         .show(ui, |ui| {
 
             //find the amount of "dummy days", being the empty calendar day cells before real days start
-            let mut dummy_count = 0;
-            for _dummy_days in 0..month.days[0].days_from_sunday {
-                dummy_count += 1;
+            let mut pre_count = 0;
+            for _pre_count_days in 0..month.days[0].days_from_sunday {
+                pre_count += 1;
 
                 get_day_frame(10).show(ui, |ui| {
                     ui.label("");
                 });
             }
 
+            let days_in_month = month.days.len();
+            let remaining_day_cells = 35 - pre_count;
+            
             //add a new day cell to the calendar
-            for day in &month.days {
+            for i in 0..remaining_day_cells {
+                
+                //add days until the max days in the month are reached, then add dummy days until 35 is reached
+                let contents;
+                if i < days_in_month {
+                    let day = month.days[i].clone();
+                    contents = format!("{}, {}", day.day_of_the_week.to_string(), day.number.to_string());
+                }
+                else {
+                    contents = String::new();
+                }
 
                 get_day_frame(10).show(ui, |ui| {
-                    ui.label(format!("{}, {}", day.day_of_the_week.to_string(), day.number.to_string()));
+                    ui.label(contents);
                 });
 
-                //ends the row after every 7 cells, including dummies, are added
-                let day_grid_cell_number = day.number + dummy_count;
+                //go to the next row every 7 days, including dummy ones
+                let day_grid_cell_number = i + 1 + pre_count;
                 if day_grid_cell_number > 0 && day_grid_cell_number % 7 == 0 {
                     ui.end_row();
                 }
@@ -120,34 +137,41 @@ impl eframe::App for CalendarApp {
 
             ui.with_layout(Layout::top_down(Align::Center), |ui| {
                 
-                egui::Frame::default().inner_margin(50).show(ui, |ui| {
+                egui::Frame::default().inner_margin(10).show(ui, |ui| {
+                    ui.add_space(10.0);
                     ui.heading(&current_month.name);
                 });
 
-                egui::Frame::default().show(ui, |ui| {
+                egui::Frame::default().inner_margin(20).show(ui, |ui| {
                     self.show_month_grid(ui, &current_month);
                 });
+
+                ui.columns(2, |columns| {
+                    columns[0].with_layout(Layout::right_to_left(Align::Center), |ui| {
+                        if ui.button("Prev").clicked() {
+                            
+                            if self.current_month_num == 0 {
+                                self.current_month_num = self.data.months.len() - 1;
+                            }
+                            else {
+                                self.current_month_num -= 1;
+                            }
+                        }
+                    });
+
+                    columns[1].with_layout(Layout::left_to_right(Align::Center), |ui| {
+                        if ui.button("Next").clicked() {
+            
+                            if self.current_month_num == self.data.months.len() - 1 {
+                                self.current_month_num = 0;
+                            }
+                            else {
+                                self.current_month_num += 1;
+                            }
+                        }
+                    });
+                });
             });
-
-            if ui.button("Next").clicked() {
-
-                if self.current_month_num == self.data.months.len() - 1 {
-                    self.current_month_num = 0;
-                }
-                else {
-                    self.current_month_num += 1;
-                }
-            }
-
-            if ui.button("Previous").clicked() {
-                
-                if self.current_month_num == 0 {
-                    self.current_month_num = self.data.months.len() - 1;
-                }
-                else {
-                    self.current_month_num -= 1;
-                }
-            }
         });
     }
 }
@@ -203,9 +227,11 @@ fn get_day_frame(size: i8) -> egui::Frame {
 
         outer_margin: Margin { left: 0, right: 0, top: 0, bottom: 0 },
 
+        fill: Color32::WHITE,
+
         //outline of the frame
         stroke: Stroke{
-            width: 1.0, 
+            width: 2.0, 
             color: Color32::BLACK
         },
 
