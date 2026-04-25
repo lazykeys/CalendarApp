@@ -11,19 +11,10 @@ pub mod file_io {
         let base_path = Path::new("data");
         let file_path = base_path.join("calendar.txt");
 
-        let file_result = File::open(file_path);
-
-        let mut file = match file_result {
-            Ok(_) => file_result.unwrap(),
-            Err(_) => return None
-        };
-            
+        let file = File::open(file_path);
         let mut buffer = String::new();
         
-        match file.read_to_string(&mut buffer) {
-            Ok(_) => {}
-            Err(_) => return None
-        };
+        file.ok()?.read_to_string(&mut buffer).ok()?;
 
         let calendar: Calendar = serde_json::from_str(buffer.as_str()).expect("JSON cannot be read!");
 
