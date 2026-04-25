@@ -1,3 +1,5 @@
+use std::{borrow::Cow, default, sync::Arc};
+
 use egui::*;
 use eframe::*;
 
@@ -137,15 +139,18 @@ impl eframe::App for CalendarApp {
 
             ui.with_layout(Layout::top_down(Align::Center), |ui| {
                 
-                egui::Frame::default().inner_margin(10).show(ui, |ui| {
+                //heading January
+                egui::Frame::default().inner_margin(10).stroke(Stroke::new(1.0, Color32::RED)).show(ui, |ui| {
                     ui.add_space(10.0);
                     ui.heading(&current_month.name);
                 });
 
-                egui::Frame::default().inner_margin(20).show(ui, |ui| {
+                //calendar grid
+                egui::Frame::default().inner_margin(20).stroke(Stroke::new(1.0, Color32::RED)).show(ui, |ui| {
                     self.show_month_grid(ui, &current_month);
                 });
 
+                //buttons
                 ui.columns(2, |columns| {
                     columns[0].with_layout(Layout::right_to_left(Align::Center), |ui| {
                         if ui.button("Prev").clicked() {
@@ -180,22 +185,37 @@ impl eframe::App for CalendarApp {
 fn set_styles(ctx: &Context) {
     let mut global_style = (*ctx.global_style()).clone();
 
+    //sets custom font!
+    let mut font_def= FontDefinitions::default();
+    let font : Arc<FontData> = Arc::new(
+        FontData { 
+            font: Cow::Borrowed(include_bytes!("../Super Starfish.ttf")), 
+            index: 0,
+            tweak: FontTweak::default()
+        }
+    );
+
+    font_def.font_data.insert("SuperStarfish".to_string(), font);
+
+    font_def.families.get_mut(&FontFamily::Proportional).unwrap().insert(0, "SuperStarfish".to_string());
+    
     //sets custom styles for text elements
     global_style.text_styles = [
 
         //header elements
-        (TextStyle::Heading, FontId::new(30.0, FontFamily::Monospace)),
+        (TextStyle::Heading, FontId::new(30.0, FontFamily::Proportional)),
 
         //body text elements
-        (TextStyle::Body, FontId::new(18.0, FontFamily::Monospace)),
+        (TextStyle::Body, FontId::new(18.0, FontFamily::Proportional)),
 
         //button elements
-        (TextStyle::Button, FontId::new(22.0, FontFamily::Monospace)),
+        (TextStyle::Button, FontId::new(22.0, FontFamily::Proportional)),
 
         //small text elements
-        (TextStyle::Small, FontId::new(14.0, FontFamily::Monospace))
+        (TextStyle::Small, FontId::new(14.0, FontFamily::Proportional))
     ].into();
 
+    ctx.set_fonts(font_def);
     ctx.set_global_style(global_style);
 }
 
